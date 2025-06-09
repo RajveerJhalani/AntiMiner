@@ -16,7 +16,7 @@ This script helps detect suspicious or hidden processes (like stealthy miners) t
 
 ──────────────────────────────
  WHAT THIS SCRIPT DOES:
-──────────────────────────────
+──────────────────────────
 
 - Takes a snapshot of all currently running processes on your system.
 - Asks you to press Enter (during this time, Task Manager can be opened).
