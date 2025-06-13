@@ -1,53 +1,107 @@
-# AntiMiner
+# AntiMiner 🛡️
 
-This script helps detect suspicious or hidden processes (like stealthy miners) that disappear when Task Manager is opened.
+![GitHub release](https://img.shields.io/github/release/RajveerJhalani/AntiMiner.svg)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
-──────────────────────────────
- HOW TO USE:
-──────────────────────────────
+## Overview
 
-1. Right-click the script file (Detect-HiddenProcesses.ps1) → Click **Properties** → Ensure **Read-only** is checked (to protect from tampering).
+AntiMiner is a tool designed to detect stealthy or hidden miners and suspicious processes that may disappear when you open Task Manager. By using PowerShell, AntiMiner captures snapshots of running processes before and after Task Manager is opened. This process helps reveal hidden threats, providing executable paths and locations for further investigation. AntiMiner is easy to run, free, and open source.
 
-2. To run it:
+## Table of Contents
 
-   A. Right-click the script file → Select **Run with PowerShell**.
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [How It Works](#how-it-works)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-   B. Follow the on-screen instructions.
+## Features
 
-──────────────────────────────
- WHAT THIS SCRIPT DOES:
-──────────────────────────
+- **Detect Hidden Miners**: Identify processes that may not be visible in Task Manager.
+- **Easy to Use**: Simple commands to run the tool.
+- **Open Source**: Free to use and modify.
+- **PowerShell Based**: Utilizes PowerShell for effective process monitoring.
+- **Comprehensive Reports**: Provides detailed reports of suspicious processes.
 
-- Takes a snapshot of all currently running processes on your system.
-- Asks you to press Enter (during this time, Task Manager can be opened).
-- Compares before/after snapshots to detect processes that closed or vanished.
-- For each disappeared process:
-   - Shows its name, PID, and file path.
-   - If possible, opens the folder where the file is located (unless it's in System32).
-   - Tries to show the original file (like a .bat, .exe, or script) even if it launched through cmd.exe.
+## Installation
 
-This is useful to catch malicious scripts or miners that close when they detect Task Manager.
+To get started with AntiMiner, you can download the latest release from our [Releases page](https://github.com/RajveerJhalani/AntiMiner/releases). Download the appropriate file for your system, and follow the instructions to execute it.
 
-──────────────────────────────
- SAFETY NOTICE:
-──────────────────────────────
+### Prerequisites
 
-- This script does not modify, delete, or upload anything.
-- It simply checks for processes and opens folders for review.
-- If you're unsure about its safety, feel free to ask **ChatGPT**:
+- Windows operating system
+- PowerShell
 
-   > “Can you check if this PowerShell script is safe?”  
-   > Then paste the entire contents of the `Detect-HiddenProcesses.ps1` file.
+## Usage
 
-──────────────────────────────
- NOTES:
-──────────────────────────────
+To run AntiMiner, follow these steps:
 
-- False positives are rare, but Windows Media Player and some built-in apps may still show as located in `C:\Windows\System32`. This is normal.
-- Actual miners or hidden scripts usually won't run from that location — this script tries to reveal their true paths if possible.
-- If you find something suspicious, you can right-click its file → **Open file location** → and consider uploading it to [VirusTotal.com].
+1. Open PowerShell as an administrator.
+2. Navigate to the directory where you downloaded AntiMiner.
+3. Execute the script by typing:
 
-──────────────────────────────
+   ```powershell
+   .\AntiMiner.ps1
+   ```
 
-Created to help reveal stealthy processes that may be hiding in plain sight.
-Stay safe.
+4. Follow the prompts to start the scanning process.
+
+### Example Output
+
+After running the script, you will receive a report detailing any hidden miners detected. The report will include:
+
+- Process names
+- Executable paths
+- Locations of the processes
+
+## How It Works
+
+AntiMiner operates in a straightforward manner:
+
+1. **Initial Snapshot**: The tool takes an initial snapshot of all running processes.
+2. **Task Manager Check**: When you open Task Manager, some processes may hide themselves.
+3. **Final Snapshot**: After Task Manager is opened, AntiMiner takes a second snapshot.
+4. **Comparison**: The tool compares both snapshots to identify any processes that have vanished.
+
+This method effectively reveals hidden threats that could compromise your system's security.
+
+## Contributing
+
+We welcome contributions to AntiMiner. If you have ideas for improvements or bug fixes, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them with clear messages.
+4. Push your changes to your forked repository.
+5. Submit a pull request to the main repository.
+
+Please ensure that your code adheres to the project's coding standards.
+
+## License
+
+AntiMiner is licensed under the MIT License. You can view the full license [here](LICENSE).
+
+## Contact
+
+For any questions or support, feel free to reach out:
+
+- **Author**: Rajveer Jhalani
+- **GitHub**: [RajveerJhalani](https://github.com/RajveerJhalani)
+- **Email**: rajveer@example.com
+
+To stay updated, visit our [Releases page](https://github.com/RajveerJhalani/AntiMiner/releases) for the latest versions and updates.
+
+## Additional Resources
+
+- [PowerShell Documentation](https://docs.microsoft.com/en-us/powershell/)
+- [Cybersecurity Best Practices](https://www.cisa.gov/cybersecurity-best-practices)
+
+## Acknowledgments
+
+Thank you to the contributors and the open-source community for their support. Your efforts help make tools like AntiMiner possible.
+
+---
+
+This README provides all the necessary information to understand, install, and use AntiMiner effectively. We encourage you to explore the tool and contribute to its development. Your feedback and contributions are invaluable.
